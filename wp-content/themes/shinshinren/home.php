@@ -19,7 +19,7 @@ get_header();
         <div class="fv__text">
             <div class="fv__inner">
                 <span>LATEST NEWS</span>
-                <h2>お知らせ</h2>
+                <h2>お知らせ！</h2>
                 <p>当法人からのお知らせやイベント情報、活動報告をお届けします</p>
             </div>
         </div>
