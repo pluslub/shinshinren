@@ -1,0 +1,165 @@
+/* ----------------------------------------------------------- */
+/* fv news */
+/* ----------------------------------------------------------- */
+
+.fv_news {
+    width: 100vw;
+    height: 480px;
+    margin-top: 6.5rem;
+    margin-bottom: 160px;
+}
+
+/* news.css */
+
+.news-archive {
+    max-width: 1200px;
+    margin: 0 auto 15rem;
+    padding-inline: 4%;
+}
+
+/* ソート機能 */
+.sort-container {
+    margin-bottom: 3.5rem;
+}
+
+.sort-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sort-list li a {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--mainColor);
+    border-radius: 6px;
+    color: var(--mainColor);
+    font-size: 0.875rem;
+    transition: 0.3s;
+}
+
+.sort-list li.active a,
+.sort-list li a:hover {
+    background-color: var(--mainColor);
+    color: var(--white);
+}
+
+/* ニュースグリッド */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* PC2カラム */
+    gap: 2.5rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.news-card {
+    position: relative;
+    border: 1px solid var(--mainColor);
+    border-left-width: 5px;
+    border-radius: 14px;
+    padding: 2.5rem;
+    background: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(109, 176, 227, 0.1);
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-meta .date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--mainColor);
+    font-size: 0.875rem;
+}
+
+.card-title {
+    font-family: var(--font-base); /* Kosugi Maru */
+    font-size: 1.25rem;
+    color: var(--mainColor);
+    margin-bottom: 1.5rem;
+}
+
+.card-text {
+    font-family: var(--font-accent); /* Hiragino Sans系 */
+    font-size: 1rem;
+    color: var(--textColor);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3行で省略 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-link {
+    position: absolute;
+    inset: 0;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pagination a, .pagination span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    border: 1px solid var(--mainColor);
+    border-radius: 4px;
+    color: var(--mainColor);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.pagination .current {
+    background-color: var(--mainColor);
+    color: var(--white);
+}
+
+.pagination .disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.wp-pagenavi {
+    display: flex;
+    gap:0.75rem;
+}
+
+/* SPレイアウト */
+@media (max-width: 960px) {
+    .fv_news {
+        height:230px;
+        margin-top:60px !important;
+        margin-bottom:108px;
+        background-color: #fff;
+    }
+    .news-grid {
+        grid-template-columns: 1fr; /* SP1カラム */
+    }
+    
+    .news-card {
+        padding: 1.5rem;
+    }
+    .sort-container {
+        margin-bottom:32px;
+    }
+    .sort-list li a {
+        font-size:0.75rem;
+        padding: 0.5rem 1rem;
+    }
+}

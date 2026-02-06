@@ -1,0 +1,304 @@
+/* ----------------------------------------------------------- */
+/* fv */
+/* ----------------------------------------------------------- */
+.pc-header { /* 実際のクラス名に合わせてください */
+    pointer-events: none !important;
+}
+
+.pc-header a { /* メニューのリンク自体はクリックできるようにする */
+    pointer-events: auto !important;
+}
+.fv {
+    width: 100vw;
+    height: 480px;
+    margin-top: 6.5rem;
+    margin-bottom: 160px;
+}
+
+.fv__text {
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    place-items: center;
+    background-color: #FAFAFA;
+}
+
+.fv__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fv__inner span {
+    color: var(--mainColor);
+    font-family: var(--font-accent);
+    font-size: clamp(0.75rem, 0.689rem + 0.26vw, 1rem);
+    margin-bottom: 1rem;
+}
+
+.fv__inner h2 {
+    color: var(--mainColor);
+    font-size: var(--pcH2Size);
+    margin-bottom: 4rem;
+}
+
+.fv__inner p {
+    color: var(--textColor);
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    letter-spacing: 0.06em;
+}
+
+.fv__image {
+    width: 100vw;
+    max-height: 1080px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 15rem;
+}
+
+@media (max-width: 960px) {
+    .fv {
+        height: 230px;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .fv__inner span {
+        margin-bottom: .5rem;
+    }
+
+    .fv__inner h2 {
+        font-size: var(--spH2Size);
+        margin-bottom: 1.5rem;
+    }
+    
+    .fv__inner p {
+        width: 60%;
+    }
+}
+
+
+/* ----------------------------------------------------------- */
+/* contact-information */
+/* ----------------------------------------------------------- */
+
+.contact-information {
+    margin-bottom: 3.5rem;
+}
+
+.contact-information__list {
+    width: 90%; 
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem 2rem;
+    margin: 0 auto 3.5rem;
+}
+
+.contact-information__list--item {
+    flex: 0 0 calc((100% - 2rem) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--mainColor);
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.contact-information__list--item h2 {
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+    font-weight: normal;
+    color: var(--mainColor);
+    margin-bottom: 1.5rem;
+    /*yamamoto*/
+    border:none !important;
+}
+
+.contact-information__list--item h3 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    font-family: var(--font-accent);
+    font-weight: normal;
+    color: var(--mainColor);
+    margin-bottom: 12px;
+}
+
+.contact-information__list--item {
+    font-family: var(--font-accent);
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--textColor);
+    letter-spacing: 0.06em;
+    line-height: 140%;
+}
+
+@media (max-width: 960px) {
+    .contact-information {
+        margin-bottom: 2.5rem;
+    }
+    
+    .contact-information h2 {
+        font-size: var(--spH2Size);
+        margin-bottom: 2.5rem;
+    }
+
+    .contact-information__list {
+        gap: 1.5rem 2rem;
+        margin: 0 auto 7rem;
+    }
+    
+    .contact-information__list--item {
+        flex: 1 100%;
+        padding: 1.5rem;
+    }
+}
+
+
+/* ----------------------------------------------------------- */
+/* form */
+/* ----------------------------------------------------------- */
+
+.contact-form {
+    margin-bottom: 13.25rem;
+}
+
+.contact-form__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid var(--mainColor);
+    border-radius: 20px;
+    padding: 3rem 4rem;
+}
+
+.contact-form__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--mainColor);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.contact-form__icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--textColor);
+    margin-bottom: 0.5rem;
+}
+
+.form-group label span {
+    color: var(--textColor);
+    margin-left: 0.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--mainColor);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-privacy {
+    background-color: transparent;
+    border: 1px solid var(--mainColor);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    text-align: left;
+}
+
+.form-privacy h3 {
+    color: var(--mainColor);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+.form-privacy p {
+    font-size: clamp(0.813rem, 0.767rem + 0.19vw, 1rem);
+    font-family: var(--font-accent);
+    line-height: 140%;
+    color: var(--textColor);
+}
+
+.form-submit {
+    text-align: center;
+}
+
+.form-submit > .primary-button {
+    width: 100%;
+    background-color: var(--accentColor);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.form-submit button:hover {
+    opacity: 0.8;
+}
+.form-submit input[type="submit"] {
+    width:100%;
+    height:44px;
+    background-color:#E3DF6D;
+    border:none;
+    color:#fff;
+    font-size: 14px;
+    border-radius: 6px;
+}
+.wpcf7-not-valid-tip {
+    color: #ff0000;
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: block;
+}
+
+@media (max-width: 960px) {
+    .contact-form {
+        margin-bottom: 10rem;
+    }
+
+    .contact-form__inner {
+        padding: 2rem 1.5rem;
+        border: none;
+    }
+    .contact-form__title {
+        font-size: 1.5rem;
+        gap: .5rem;
+    }
+
+    .form-privacy {
+        padding: 15px 10px;
+    }
+}

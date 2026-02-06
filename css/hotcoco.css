@@ -1,0 +1,523 @@
+
+/* ----------------------------------------------------------- */
+/* fv */
+/* ----------------------------------------------------------- */
+
+/* layout */
+.fv {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--columnGap);
+}
+
+.fv-header {
+    grid-column: 2 / 5;
+}
+
+.fv__image {
+    grid-column: 6 / 12;
+}
+
+@media (max-width: 960px) {
+    .fv {
+        grid-template-columns: repeat(4, 1fr);
+        grid-row: auto auto;
+    }
+    
+    .fv-header {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+    }
+    
+    .fv__image {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+    }
+}
+
+/* style */
+.fv {
+    margin-block: 14rem 15rem;
+}
+
+.fv-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.fv-header__title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fv-header__title span {
+    font-family: var(--font-accent);
+    font-size: clamp(0.75rem, 0.689rem + 0.26vw, 1rem);
+    color: var(--mainColor);
+}
+
+.fv-header__title h2 {
+    font-size: var(--pcH2Size);
+    color: var(--mainColor);
+    white-space: nowrap;
+}
+
+.fv-header__text {
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    color: var(--textColor);
+    letter-spacing: 0.06em;
+    line-height: 160%;
+    text-align: justify;
+}
+
+.fv__image {
+    width: 100%;
+    object-fit: cover;
+    max-height: 500px;
+    border-radius: 6px;
+}
+
+@media (max-width: 960px) {
+    /* style */
+    .fv {
+        padding-inline: 4%;
+        margin-block: 8.75rem 7.5rem;
+    }
+
+    .fv-header {
+        margin-bottom: 3.5rem;
+    }
+
+    .fv-header__title {
+        gap: .5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .fv-header__title h2 {
+        font-size: var(--spH2Size);
+    }
+
+    .fv__image {
+        width: 100%;
+        object-fit: cover;
+        max-height: 500px;
+        border-radius: 6px;
+    }
+}
+
+
+/* ----------------------------------------------------------- */
+/* support-details */
+/* ----------------------------------------------------------- */
+
+/* 主な支援内容 */
+/* ---------------------------------*/
+.support-details {
+    margin-bottom: 12.5rem;
+}
+
+.support-details h2 {
+    text-align: center;
+    font-size: var(--pcH2Size);
+    color: var(--mainColor);
+    margin-bottom: 4.5rem;
+}
+
+.support-details__list {
+    width: 90%; 
+    max-width: 1270px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2.5rem 2rem;
+    margin: 0 auto 10rem;
+}
+
+.support-details__list--item {
+    min-height: 15.625rem;
+    flex: 0 0 calc((100% - 2rem) / 2);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--mainColor);
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.support-details__list--item h3 {
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+    color: var(--mainColor);
+    margin-bottom: 0.75rem;
+}
+
+.support-details__list--item p {
+    flex-grow: 1;
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    font-family: var(--font-accent);
+    color: var(--textColor);
+    letter-spacing: 0.06em;
+    line-height: 160%;
+    text-align: justify;
+}
+
+@media (max-width: 960px) {
+    .support-details {
+        margin-bottom: 7rem;
+    }
+    
+    .support-details h2 {
+        font-size: var(--spH2Size);
+        margin-bottom: 2.5rem;
+    }
+
+    .support-details__list {
+        gap: 1.5rem 2rem;
+        margin: 0 auto 7rem;
+    }
+    
+    .support-details__list--item {
+        min-height: 8.125rem;
+        flex: 1 100%;
+        padding: 1.5rem;
+    }
+}
+
+
+/* このような方が対象です */
+/* -------------------------------- */
+.support-details__targe-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 944px;
+    border: 1px solid var(--mainColor);
+    border-radius: 14px;
+    padding: 3rem;
+    margin: 0 auto;
+    gap: 1.5rem 3rem; 
+}
+
+.support-details__targe-list--item {
+    /* 2列にする計算：(100% - 横のgap 3rem) / 2 */
+    flex: 0 0 calc((100% - 3rem) / 2);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    font-family: var(--font-accent);
+    line-height: 160%;
+    color: var(--textColor);
+}
+
+.support-details__targe-list--item img {
+    width: 20px; /* アイコンのサイズ（適宜調整） */
+    height: auto;
+    flex-shrink: 0; /* アイコンが潰れないように固定 */
+}
+
+@media (max-width: 960px) {
+    .support-details__targe-list {
+        width: 90%;
+        max-width: 944px;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem; 
+    }
+    
+    .support-details__targe-list--item {
+        flex: 1 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+}
+
+
+/* ----------------------------------------------------------- */
+/* flow */
+/* ----------------------------------------------------------- */
+
+.flow {
+    margin-bottom: 15rem;
+}
+
+.flow-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.flow-header h2 {
+    font-size: var(--pcH2Size);
+    color: var(--mainColor);
+    margin-bottom: 2rem;
+}
+
+.flow-header p {
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    color: var(--textColor);
+}
+
+.flow-list {
+    width: 100%;
+    max-width: 945px;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin: 0 auto;
+}
+
+.flow-list__item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.flow-list__item span {
+    font-size: 1rem;
+    background-color: var(--mainColor);
+    color: var(--white);
+    font-family: var(--font-accent);
+    border-radius: 50%;
+    padding: 23px 25px;
+}
+
+.flow-step {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid var(--mainColor);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: -6px 0px 0px 0px rgba(41, 120, 180, 1);
+}
+
+.flow-step h3 {
+    font-size: 1.25rem;
+    color: var(--mainColor);
+}
+
+.flow-step p {
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    color: var(--textColor);
+    letter-spacing: 0.06em;
+    line-height: 160%;
+}
+
+@media (max-width: 960px) {
+    .flow {
+        margin-bottom: 7rem;
+        padding-inline: 4%;
+    }
+
+    .flow-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .flow-header h2 {
+        font-size: var(--spH2Size);
+    }
+
+    .flow-list {
+        gap: 1rem;
+    }
+
+    .flow-list__item {
+        gap: 1rem;
+    }
+
+    .flow-list__item span {
+        padding: 13px 15px;
+    }
+
+    .flow-step {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+}
+
+
+/* ----------------------------------------------------------- */
+/* Q&A*/
+/* ----------------------------------------------------------- */
+
+.qa {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 15rem;
+}
+
+.qa h2 {
+    font-size: var(--pcH2Size);
+    color: var(--mainColor);
+    text-align: center;
+    margin-bottom: 4.5rem;
+}
+
+.qa-list {
+    width: 49.218vw;
+    margin: 0 auto;
+}
+
+.accordion {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--mainColor);
+    border-radius: 8px;
+}
+
+.accordion summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    color: var(--textColor);
+    cursor: pointer;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-bottom: 1px solid var(--mainColor);
+    border-right: 1px solid var(--mainColor);
+    content: '';
+    transition: transform .3s;
+}
+
+.accordion[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.accordion p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .3em 2em 1.5em;
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    color: var(--textColor);
+    transition: transform .5s, opacity .5s;
+}
+
+.accordion[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+@media (max-width: 960px) {
+    .qa {
+        margin-bottom: 7rem;
+    }
+    
+    .qa h2 {
+        font-size: var(--spH2Size);
+        margin-bottom: 2.5rem;
+    }
+    
+    .qa-list {
+        width: calc(100vw - 4%);
+    }
+
+    .accordion {
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* ----------------------------------------------------------- */
+/* contact */
+/* ----------------------------------------------------------- */
+
+.contact {
+    margin-bottom: 15rem;
+}
+
+.contact h2 {
+    font-size: var(--pcH2Size);
+    color: var(--mainColor);
+    text-align: center;
+    margin-bottom: 4.5rem;
+}
+
+.contact-list {
+    width: 83.02vw; /* デザインに合わせた相対幅 */
+    max-width: 1400px; /* 必要に応じて最大幅を設定 */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* 隙間を固定して中央に寄せる */
+    gap: 1.5vw; /* 画面幅に応じて隙間も伸縮させる */
+}
+
+.contact-list__item {
+    flex: 0 0 calc((100% - (1.5vw * 3)) / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--mainColor);
+    border-radius: 14px;
+    padding: 2rem 1.5rem; /* 左右パディングを少し詰めると中身が入りやすい */
+    box-sizing: border-box; /* 枠線と余白を幅に含める（超重要） */
+    text-align: center; /* テキストを中央寄せに */
+}
+
+.contact-list__item p {
+    font-family: var(--font-accent);
+    font-size: 14px;
+    color: var(--textColor);
+    word-break: break-all; /* 長いメールアドレスなどが枠を突き抜けないように */
+    line-height: 160%;
+}
+
+.contact-category {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-category img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.contact-category h3 {
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    font-family: var(--font-accent);
+    color: var(--mainColor);
+    font-weight: normal;
+}
+
+@media (max-width: 960px) {
+    .contact {
+        margin-bottom: 7rem;
+    }
+    
+    .contact h2 {
+        font-size: var(--spH2Size);
+        margin-bottom: 2.5rem;
+    }
+    
+    .contact-list {
+        width: calc(100vw - 4%); 
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-list__item {
+        flex: 1 100%;
+    }
+}
