@@ -1,1 +1,4 @@
-.DS_Store
+
+news/wp-includes/
+news/wp-admin/
+news/wp-content/uploads/

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <title>草津市障害福祉センター｜NPO法人草津市心身障害児者連絡協議会</title>
+    <meta name="description" content="草津市障害福祉センターのページは準備中です。">
+    <style>
+        body {
+            background-color: var(--baseColor);
+        }
+
+        .coming-soon {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .coming-soon__label {
+            font-family: var(--font-accent);
+            font-size: var(--pcAlphabetSize);
+            color: var(--mainColor);
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .coming-soon__title {
+            font-size: clamp(1.5rem, 1.257rem + 1.04vw, 2.5rem);
+            color: var(--mainColor);
+            margin-bottom: 24px;
+        }
+
+        .coming-soon__text {
+            font-family: var(--font-accent);
+            font-size: clamp(0.875rem, 0.767rem + 0.45vw, 1.25rem);
+            color: var(--mainColor);
+            line-height: 180%;
+            letter-spacing: 0.06em;
+            margin-bottom: 48px;
+        }
+
+        .coming-soon__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-accent);
+            font-size: 14px;
+            color: var(--mainColor);
+            border-bottom: 1px solid var(--mainColor);
+            padding-bottom: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .coming-soon__back:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 960px) {
+            .coming-soon__label {
+                font-size: var(--spAlphabetSize);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<main class="coming-soon">
+    
+    <p class="coming-soon__label">COMING SOON</p>
+    <h1 class="coming-soon__title">草津市障害福祉センター</h1>
+    <p class="coming-soon__text">
+        このページは現在準備中です。<br>
+        公開までしばらくお待ちください。
+    </p>
+
+    <a class="coming-soon__back" href="../index.php">← トップページに戻る</a>
+</main>
+
+</body>
+</html>

@@ -236,10 +236,13 @@
         width: 100%;
         justify-content: space-evenly;
         padding-inline: 32px;
+        color: #004a8d; /* 濃い青 */
+        mix-blend-mode: multiply; /* 背景と色が重なり、より深みのある色になります */
     }
 
     .text-group p {
-        letter-spacing: 1em;
+        letter-spacing: 0.04em;
+        font-size: 16px!important;
     }
 
     .swiper-slide {
@@ -256,6 +259,7 @@
 
     .fv-title__image--sp {
         display: block;
+        align-self: end;
         width: 48vw;
         height: 20.8vw;
         border-radius: 120px;
@@ -370,7 +374,7 @@
 
 .hero-intro span {
     font-family: var(--font-accent);
-    font-size: var(--pcAlphabet);
+    font-size: var(--pcAlphabetSize);
     color: var(--white);
 }
 
@@ -420,7 +424,7 @@
 
 .hero-message p {
     color: #7DC5FE;
-    font-size: clamp(1.5rem, 1.257rem + 1.04vw, 2.5rem);
+    font-size: clamp(1.125rem, 1rem + 0.83vw, 2rem);
     line-height: 240%;
     letter-spacing: .5em;
 }
@@ -482,13 +486,13 @@
 
 .bg-blue {
     background-color: var(--bgColor);
+    position: relative;
 }
 
 .slides-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 104px;
     margin-block: 6.458vw;
 }
 
@@ -500,7 +504,7 @@
 
 .slides-header span {
     font-family: var(--font-accent);
-    font-size: var(--pcAlphabet);
+    font-size: var(--pcAlphabetSize);
     color: var(--white);
 }
 
@@ -518,14 +522,61 @@
     border-radius: 6px;
 }
 
+
 .section {
     width: 83.125vw;
     height: auto;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
     border-radius: 16px;
+    /* 
+    前のカードの上に重なるように z-index はGSAPが自動調整しますが、
+    基本的な重なり順を担保するために relative を指定 
+    */
     position: relative;
+    overflow: hidden; /* 影などを見せる場合は visible */
+    isolation: isolate; 
+}
+
+#cursor-badge {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(227, 223, 109, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: bold;
+    font-family: var(--font-accent);
+    color: var(--white);
+    z-index: 9999; /* 最前面に */
+    pointer-events: none; /* マウスを透過させる */
+    
+    /* 初期状態 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0); /* 中心をマウスに合わせる設定 */
+}
+
+/* ホバー対象の要素上でマウスカーソル自体を消す */
+.section, 
+.about {
+    cursor: none;
+}
+
+/* 念のため、中のリンク要素もカーソルを消す */
+.section .card-links,
+.about .card-links,
+.section .card-links::after,
+.about .card-links::after {
+    cursor: none !important;
 }
 
 .section-inner {
@@ -579,7 +630,7 @@
 
 .text-header__inner span {
     font-family: var(--font-accent);
-    font-size: var(--pcAlphabet);
+    font-size: var(--pcAlphabetSize);
     color: var(--white);
 }
 
@@ -618,6 +669,7 @@
     /* style */
     .slides-wrapper {
         gap: 0;
+        margin-block: 3vw;
     }
 
     .section {
@@ -625,6 +677,7 @@
         margin-left: auto;
         margin-right: auto;
         display: flex; 
+        overflow: visible !important;
     }
 
     .section-inner {
@@ -635,6 +688,13 @@
         width: 100%;
         height: 53.333vw;
         margin-bottom: 6.4vw;
+    }
+
+    .slides-header {
+        position: -webkit-sticky; /* Safari対応 */
+        position: sticky;
+        top: 14.93vw; /* 画面の一番上に固定 */
+        z-index: 100; /* カードよりも上に表示 */
     }
 
     .slides-header span {
@@ -673,6 +733,10 @@
 
     .text-body {
         padding-left: 0;
+    }
+
+    .hover-badge {
+        display: none!important;
     }
 }
 
@@ -755,7 +819,7 @@
 /* stye */
 .about-text__title span {
     font-family: var(--font-accent);
-    font-size: var(--pcAlphabet);
+    font-size: var(--pcAlphabetSize);
     color: var(--mainColor);
 }
 
@@ -793,7 +857,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 50;
+    z-index: 9999;
     cursor: pointer;
 }
 
@@ -907,7 +971,7 @@
 
 
 /* style */
-.sp-news__btn {
+.news-header > .primary-button > .sp-news__btn {
     display: none;
 }
 
@@ -924,13 +988,22 @@
     cursor: pointer;
 }
 
+.news-header > .primary-button:hover {
+    background-color: #1C3A5E;
+    border-color: #1C3A5E;
+}
+
 .news-header > .primary-button a {
-    color: var(--white);
+    color: #929160;
+}
+
+.news-header > .primary-button:hover a {
+    color: #fff;
 }
 
 .news-header__title span {
     font-family: var(--font-accent);
-    font-size: var(--pcAlphabet);
+    font-size: var(--pcAlphabetSize);
     color: var(--mainColor);
 }
 
@@ -1037,7 +1110,7 @@
     }
 
     .news-header__title span {
-        font-size: var(--spAlphabet);
+        font-size: var(--spAlphabetSize);
     }
 
     .news-header .primary-button {
@@ -1155,18 +1228,29 @@
 .recruit-header__inner > .primary-button {
     padding: 12px 14px;
     border-radius: 30px;
+    background-color: var(--accentColor);
 }
 
-.recruit-header__inner > .primary-button img {
-    width: 16px;
-    height: 16px;
-    rotate: -135deg;
+.recruit-header__inner > .primary-button:hover {
+    background-color: #1C3A5E;
+    border-color: #1C3A5E;
 }
+
+.recruit-header__inner > .primary-button a {
+    font-size: 14px;
+    color: #929160;
+}
+
+.recruit-header__inner > .primary-button:hover a {
+    color: #fff;
+}
+
+
 
 
 .recruit-header__title span {
     font-family: var(--font-accent);
-    font-size: var(--pcAlphabet);
+    font-size: var(--pcAlphabetSize);
     color: var(--white);
     margin-bottom: 8px;
 }
@@ -1222,7 +1306,7 @@
     }
 
     .recruit-header__title span {
-        font-size: var(--spAlphabet);
+        font-size: var(--spAlphabetSize);
     }
     
     .recruit-header__title h2 {

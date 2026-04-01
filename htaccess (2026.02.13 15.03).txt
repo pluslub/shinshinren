@@ -1,0 +1,5 @@
+AuthUserFile /home/users/0/versus.jp-locoloco/web/shinshinren/.htpasswd
+AuthGroupFile /dev/null
+AuthName "webサイト"
+AuthType Basic
+require valid-user

@@ -9,6 +9,7 @@ html.lenis {
     height: auto;
 }
 
+
 .lenis-smooth {
     /* ブラウザ標準の挙動と競合させない */
     scroll-behavior: auto !important; 
@@ -58,37 +59,39 @@ li {
 /* ----------------------------------------------------------- */
 
 .primary-button {
-    background-color: transparent;
-    color: var(--accentColor);
+    background-color: var(--accentColor);
+    color: #929160;
     padding: 0;
     border: 1px solid var(--accentColor);
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     max-height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.25s ease,
+                border-color 0.25s ease;
 }
 
 .primary-button:hover {
-    background-color: var(--accentColor);
-    color: var(--white);
+    background-color: #1C3A5E;
+    border-color: #1C3A5E;
 }
 
 .primary-button a {
-    color: var(--accentColor);
+    color: #929160;
+    font-weight: bold;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 1rem 2rem; /* ボタンの大きさをここで調整 */
+    padding: 1rem 2rem;
 }
 
 .primary-button a:hover {
-    color: var(--white);
+    color: #fff;
 }
 
 /* split text style */
@@ -115,11 +118,13 @@ li {
     padding: 0 40px;
     margin-top: 2.0833vw;
     background: transparent;
+    pointer-events: none !important;
 }
 
-.header-logo {
-    mix-blend-mode: difference;
+.pc-header a {
+    pointer-events: auto !important;
 }
+
 
 .header-logo img {
     display: block;
@@ -148,8 +153,13 @@ li {
 
 .pc-header__nav ul li a {
     font-family: var(--font-accent);
-    color: var(--mainColor);
+    color: #1C3A5E;
     font-size: 16px;
+    transition: opacity 0.2s ease;
+}
+
+.pc-header__nav ul li a:hover {
+    opacity: 0.6;
 }
 
 
@@ -172,7 +182,7 @@ li {
     position: fixed;
     top: 15px;
     left: 20px;
-    mix-blend-mode: difference;
+    z-index: 1000;
 }
 
 .sp-header__logo img {
@@ -262,7 +272,19 @@ li {
 
 .nav-grid__sections > .primary-button {
     background-color: var(--accentColor);
-    color: var(--white);
+}
+
+.nav-grid__sections > .primary-button:hover {
+    background-color: #1C3A5E;
+    border-color: #1C3A5E;
+}
+
+.nav-grid__sections > .primary-button a {
+    color: #929160;
+}
+
+.nav-grid__sections > .primary-button:hover a {
+    color: #fff;
 }
 
 .nav-grid__section {
@@ -387,8 +409,17 @@ li {
     background-color: var(--accentColor);
 }
 
+.cta-content > .primary-button:hover {
+    background-color: #1C3A5E;
+    border-color: #1C3A5E;
+}
+
 .cta-content > .primary-button a {
-    color: var(--white);
+    color: #929160;
+}
+
+.cta-content > .primary-button:hover a {
+    color: #fff;
 }
 
 
@@ -415,6 +446,7 @@ footer {
     color: var(--white);
     font-family: var(--font-accent);
     font-size: 18px;
+    font-weight: bold;
 }
 
 .footer-description__about br {
@@ -424,6 +456,7 @@ footer {
 .footer-description__about p {
     color: var(--white);
     font-size: 16px;
+    font-weight: normal;
     margin-top: 24px;
 }
 
@@ -479,7 +512,8 @@ footer {
 .footer-nav__container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 2rem;
 }
 
 .footer-nav__links {
@@ -496,7 +530,7 @@ footer {
 
 .footer-nav__links ul li {
     margin-bottom: 14px;
-    margin-left: 18px;
+    margin-left: 12px;
 }
 
 .footer-nav__links ul li:last-of-type {
@@ -504,7 +538,7 @@ footer {
 }
 
 .footer-nav__links ul li a {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
     color: #C5C5C5;
     transition: .3s;

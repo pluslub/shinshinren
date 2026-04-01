@@ -32,7 +32,7 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.6 }); // 20%見えたら実行
+}, { threshold: 0.6 }); // 60%見えたら実行
 
 // 監視を開始（親要素などを指定）
 items.forEach(item => observer.observe(item));
@@ -40,55 +40,53 @@ items.forEach(item => observer.observe(item));
 
 
 /* ----------------------------------------------------------- */
-/* service */
+/* service (Stacking Cards: PCは上部、スマホは中央で重なりを再現) */
 /* ----------------------------------------------------------- */
 
-// card
 gsap.registerPlugin(ScrollTrigger);
 
-var panels = gsap.utils.toArray(".section");
-panels.pop();
-
-panels.forEach((panel, i) => {
-
-// Get the element holding the content inside the panel
-let innerpanel = panel.querySelector(".section-inner");
-
-// Get the Height of the content inside the panel
-let panelHeight = innerpanel.offsetHeight;
-console.log(panelHeight)
-
-// Get the window height
-let windowHeight = window.innerHeight;
-
-let difference = panelHeight - windowHeight;
-
-// ratio (between 0 and 1) representing the portion of the overall animation that's for the fake-scrolling. We know that the scale & fade should happen over the course of 1 windowHeight, so we can figure out the ratio based on how far we must fake-scroll
-let fakeScrollRatio = difference > 0 ? (difference / (difference + windowHeight)) : 0;
-
-// if we need to fake scroll (because the panel is taller than the window), add the appropriate amount of margin to the bottom so that the next element comes in at the proper time.
-if (fakeScrollRatio) {
-    panel.style.marginBottom = panelHeight * fakeScrollRatio + "px";
-}
-
-let tl = gsap.timeline({
-scrollTrigger:{
-    trigger: panel,
-    start: "bottom bottom",
-    end: () => fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : "bottom top",
-    pinSpacing: false,
-    pin: true,
-    scrub: true
-    }
+// iOSのアドレスバーによるリサイズでのガタつきを防止
+ScrollTrigger.config({
+    ignoreMobileResize: true
 });
 
-// fake scroll. We use 1 because that's what the rest of the timeline consists of (0.9 scale + 0.1 fade)
-if (fakeScrollRatio) {
-    tl.to(innerpanel, {yPercent:-100, y: window.innerHeight, duration: 1 / (1 - fakeScrollRatio) - 1, ease: "none"});
-    }
-    tl.fromTo(panel, {scale:1, opacity:1}, {scale: 0.7, opacity: 0.5, duration: 0.9})
-        .to(panel, {opacity:0, duration: 0.1});
+const panels = gsap.utils.toArray(".section");
+let mm = gsap.matchMedia();
+
+// デバイスごとに挙動を切り分け
+mm.add({
+    // PC用（961px以上）
+    isDesktop: "(min-width: 961px)",
+    // スマホ・タブレット用（960px以下）
+    isMobile: "(max-width: 960px)"
+}, (context) => {
+    let { isDesktop, isMobile } = context.conditions;
+
+    panels.forEach((panel, i) => {
+        // 最後のパネル以外にアニメーションを適用
+        if (i < panels.length - 1) {
+            gsap.to(panel, {
+                scale: 0.9,       // 縮小率
+                opacity: 0.1,     // 重なった時の暗転率
+                scrollTrigger: {
+                    trigger: panel,
+                    // デバイスに応じて開始位置を切り替え
+                    start: isDesktop ? "top top" : "center center",
+                    // 次のパネルが自分の上に完全に乗り上げるまで固定を維持
+                    end: () => `+=${panels[i + 1].offsetHeight}`,
+                    pin: true,        // その場に固定
+                    pinSpacing: false, // 次のパネルを重ねるために必須
+                    scrub: true,
+                    invalidateOnRefresh: true
+                }
+            });
+        }
+    });
 });
+
+// リフレッシュして計算を確定させる
+ScrollTrigger.refresh();
+
 
 
 
@@ -123,9 +121,55 @@ gsap.to(".text span", {
         trigger: ".hero-message",
         start: "top bottom",
         end: "+=1000",
-        markers: true,
+        markers: false,
         scrub: true,
     },
     color: "#fff",
     stagger: 0.1
+});
+
+
+
+
+/* ----------------------------------------------------------- */
+/* バッジhover */
+/* ----------------------------------------------------------- */
+
+
+// バッジ要素を取得
+const badge = document.querySelector("#cursor-badge");
+
+// パフォーマンス向上のための setter
+const xSetter = gsap.quickSetter(badge, "x", "px");
+const ySetter = gsap.quickSetter(badge, "y", "px");
+
+// 1. マウスを動かした時の処理
+window.addEventListener("mousemove", (e) => {
+    // マウス位置をバッジにセット
+    xSetter(e.clientX);
+    ySetter(e.clientY);
+});
+
+// 2. すべての .section に対してホバーイベントを設定
+// 共通のホバー対象を配列にまとめる
+const hoverTargets = document.querySelectorAll(".section, .about");
+
+hoverTargets.forEach((target) => {
+    target.addEventListener("mouseenter", () => {
+        gsap.to(badge, {
+            autoAlpha: 1,
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    });
+
+    target.addEventListener("mouseleave", () => {
+        gsap.to(badge, {
+            autoAlpha: 0,
+            scale: 0,
+            duration: 0.3,
+            ease: "power2.in"
+        });
+    });
 });

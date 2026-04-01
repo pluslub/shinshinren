@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65YJM31BMV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-65YJM31BMV');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,17 +25,17 @@
 <header class="pc-header">
     <h1>
         <div class="header-logo">
-            <a href="./index.html"><img src="./assets/images/logo.svg" alt="心身連"></a>
+            <a href="./index.php"><img src="./assets/images/logo.svg" alt="心身連"></a>
         </div>
     </h1>
     <nav class="pc-header__nav">
-        <button class="primary-button"><a href="./contact.html">お問い合わせ</a></button>
+        <button class="primary-button"><a href="/contact">お問い合わせ</a></button>
         <ul>
-            <li><a href="./index.html">トップ</a></li>
+            <li><a href="./index.php">トップ</a></li>
             <li><a href="./about.html">法人について</a></li>
             <li><a href="./service.html">事業内容</a></li>
             <li><a href="#">採用情報</a></li>
-            <li><a href="./news.html">お知らせ</a></li>
+            <li><a href="/news">お知らせ</a></li>
         </ul>
     </nav>
 </header>
@@ -52,13 +61,14 @@
                 <section class="nav-grid__section">
                     <h2 class="nav-grid__title">サイトマップ</h2>
                     <ul class="nav-grid__list">
+                        <li><a href="./index.php" class="nav-grid__link">トップ</a></li>
                         <li><a href="./about.html" class="nav-grid__link">法人について</a></li>
                         <li><a href="./service.html" class="nav-grid__link">事業内容</a></li>
                         <li><a href="#" class="nav-grid__link">採用情報</a></li>
-                        <li><a href="./news.html" class="nav-grid__link">お知らせ</a></li>
+                        <li><a href="/news" class="nav-grid__link">お知らせ</a></li>
                     </ul>
                 </section>
-                <button class="primary-button"><a href="./contact.html">お問い合わせ</a></button>
+                <button class="primary-button"><a href="/contact">お問い合わせ</a></button>
             </div>
         </div>
     </nav>
@@ -114,30 +124,13 @@
             <h2>募集職種</h2>
             <p>現在募集している職種をご紹介します</p>
         </div>
+
+        <div class="recruit-jobs__notice" style="display:none;">
+            現在募集はしておりません。
+        </div>
+
         <ul class="jobs-list">
-            <li class="jobs-list__card">
-                <div class="card-header">
-                    <div class="card-header__type">
-                        <h3>支援員</h3>
-                        <h4><span class="job-place">ロコロコ</span><span class="worker-type">正社員</span></h4>
-                    </div>
-                    <p>障害のある方やご家族からの相談に応じ、必要な支援を行う専門職です。</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-body__requirements">
-                        <h4><img src="./assets/images/i-check.svg" alt="">応募資格・条件</h4>
-                        <li>相談支援従事者初任者研修修了者</li>
-                        <li>実務経験3年以上が望ましい</li>
-                        <li>普通自動車免許（AT限定可）</li>
-                    </ul>
-                    <ul class="card-body__requirements">
-                        <h4><img src="./assets/images/i-check.svg" alt="">求めるスキル・人物像</h4>
-                        <li>傾聴力・コミュニケーション能力</li>
-                        <li>関係機関との調整能力</li>
-                        <li>パソコン基本操作</li>
-                    </ul>
-                </div>
-            </li>
+            <!-- 雛形の為削除厳禁！
 
             <li class="jobs-list__card">
                 <div class="card-header">
@@ -161,15 +154,19 @@
                         <li>パソコン基本操作</li>
                     </ul>
                 </div>
-            </li>
+            </li> 
+
+            -->
 
             <li class="jobs-list__card">
                 <div class="card-header">
                     <div class="card-header__type">
-                        <h3>支援員</h3>
-                        <h4><span class="job-place">ロコロコ</span><span class="worker-type">正社員</span></h4>
+                        <h3>デイサービスヘルパー</h3>
+                        <!-- <h4><span class="job-place">ロコロコ</span>--><span class="worker-type">パート</span></h4> 
                     </div>
-                    <p>障害のある方やご家族からの相談に応じ、必要な支援を行う専門職です。</p>
+                    <p>
+                        障がいのある方のデイサービス施設にて、介護業務および入浴介助送迎などを行なっていただきます。
+                    </p>
                 </div>
                 <div class="card-body">
                     <ul class="card-body__requirements">
@@ -177,6 +174,31 @@
                         <li>相談支援従事者初任者研修修了者</li>
                         <li>実務経験3年以上が望ましい</li>
                         <li>普通自動車免許（AT限定可）</li>
+                    </ul>
+                    <ul class="card-body__requirements">
+                        <h4><img src="./assets/images/i-check.svg" alt="">求めるスキル・人物像</h4>
+                        <li>傾聴力・コミュニケーション能力</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="jobs-list__card">
+                <div class="card-header">
+                    <div class="card-header__type">
+                        <h3>相談員</h3>
+                        <h4><span class="job-place">基幹</span><span class="worker-type">正社員</span></h4> 
+                    </div>
+                    <p>
+                        基幹相談支援センターの相談員を募集しております。
+                    </p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-body__requirements">
+                        <h4><img src="./assets/images/i-check.svg" alt="">応募資格・条件</h4>
+                        <li>社会福祉課</li>
+                        <li>精神保健福祉士</li>
+                        <li>保健士</li>
+                        <li>主任相談専門員</li>
                     </ul>
                     <ul class="card-body__requirements">
                         <h4><img src="./assets/images/i-check.svg" alt="">求めるスキル・人物像</h4>
@@ -191,8 +213,7 @@
 
     <section class="flow">
         <div class="flow-header">
-            <h2>ご利用の流れ</h2>
-            <p>初めての方も安心してご利用いただけます。</p>
+            <h2>ご応募の流れ</h2>
         </div>
         <ul class="flow-list">
             <li class="flow-list__item">
@@ -244,10 +265,11 @@
         <div class="cta-content">
             <h2>お気軽にご相談ください</h2>
             <p>
-                どんな小さなことでも構いません。まずはお話を聞かせてください。<br>
+                どんな小さなことでも構いません。<br>
+                まずはお話を聞かせてください。<br>
                 一緒に考え、最適な支援をご提案します。
             </p>
-            <button class="primary-button"><a href="./contact.html">お問い合わせ</a></button>
+            <button class="primary-button"><a href="/contact">お問い合わせ</a></button>
         </div>
     </section>
 </main>
@@ -260,9 +282,9 @@
         </div>
         <div class="footer-description__contact">
             <ul>
-                <li><img src="./assets/images/i-place.svg" alt="">〒525-0025<br>滋賀県草津市西渋川二丁目9番38号渋川福複センター2階</li>
-                <li><img src="./assets/images/i-phone.svg" alt="">077-565-2251</li>
-                <li><img src="./assets/images/i-mail.svg" alt="">info@kusatsu-renkyou.or.jp</li>
+                <li><img src="./assets/images/i-place.svg" alt="">〒525-0034<br>滋賀県草津市草津一丁目3-5（本部所在地）</li>
+                <li><img src="./assets/images/i-phone.svg" alt="">077-569-0351</li>
+                <li><img src="./assets/images/i-mail.svg" alt="">kusatsu-fukushi2@swan.ocn.ne.jp</li>
             </ul>
         </div>
     </div>
@@ -272,12 +294,12 @@
             <div class="footer-nav__links">
                 <h2>サイトマップ</h2>
                 <ul>
-                    <li><a href="./index.html">トップ</a></li>
+                    <li><a href="./index.php">トップ</a></li>
                     <li><a href="./about.html">法人について</a></li>
                     <li><a href="./service.html">事業内容</a></li>
-                    <li><a href="./news.html">お知らせ</a></li>
+                    <li><a href="/news">お知らせ</a></li>
                     <li><a href="#">採用情報</a></li>
-                    <li><a href="./contact.html">お問い合わせ</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
                 </ul>
             </div>
             <div class="footer-nav__links">
@@ -287,16 +309,7 @@
                     <li><a href="./support/hotcoco.html">ほっとココ（計画相談）</a></li>
                     <li><a href="https://locolocoshiga.jp/">ロコロコ</a></li>
                     <li><a href="./support/community-support.html">草津市いきいきふれあい大運動会<br>草津市障害者孤立化防止事業</a></li>
-                    <li><a href="">草津市障害福祉センター</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav__links">
-                <h2>情報公開</h2>
-                <ul>
-                    <li><a href="">定款</a></li>
-                    <li><a href="">収支決算書</a></li>
-                    <li><a href="">事業報告書</a></li>
-                    <li><a href="">理事会資料</a></li>
+                    <li><a href="./support/welfare-center.html">草津市障害福祉センター</a></li>
                 </ul>
             </div>
         </div>

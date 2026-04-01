@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65YJM31BMV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-65YJM31BMV');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +24,17 @@
 <header class="pc-header">
     <h1>
         <div class="header-logo">
-            <a href="/index.html"><img src="./assets/images/logo.svg" alt="心身連"></a>
+            <a href="./index.php"><img src="./assets/images/logo.svg" alt="心身連"></a>
         </div>
     </h1>
     <nav class="pc-header__nav">
-        <button class="primary-button"><a href="./contact.html">お問い合わせ</a></button>
+        <button class="primary-button"><a href="/contact">お問い合わせ</a></button>
         <ul>
-            <li><a href="./index.html">トップ</a></li>
+            <li><a href="./index.php">トップ</a></li>
             <li><a href="#">法人について</a></li>
             <li><a href="./service.html">事業内容</a></li>
             <li><a href="./recruit.html">採用情報</a></li>
-            <li><a href="./news.html">お知らせ</a></li>
+            <li><a href="/news">お知らせ</a></li>
         </ul>
     </nav>
 </header>
@@ -51,14 +60,14 @@
                 <section class="nav-grid__section">
                     <h2 class="nav-grid__title">サイトマップ</h2>
                     <ul class="nav-grid__list">
-                        <li><a href="./index.html" class="nav-grid__link">ホーム</a></li>
+                        <li><a href="./index.php" class="nav-grid__link">トップ</a></li>
                         <li><a href="#" class="nav-grid__link">法人について</a></li>
                         <li><a href="./service.html" class="nav-grid__link">事業内容</a></li>
                         <li><a href="./recruit.html" class="nav-grid__link">採用情報</a></li>
-                        <li><a href="./news.html" class="nav-grid__link">お知らせ</a></li>
+                        <li><a href="/news" class="nav-grid__link">お知らせ</a></li>
                     </ul>
                 </section>
-                <button class="primary-button"><a href="./contact.html">お問い合わせ</a></button>
+                <button class="primary-button"><a href="/contact">お問い合わせ</a></button>
             </div>
         </div>
     </nav>
@@ -230,21 +239,32 @@
         <ul class="information-list">
             <li class="information-list__item">
                 <h3>定款</h3>
-                <button class="primary-button"><a href="">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+                <button class="primary-button"><a href="./assets/report/teikan.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
             </li>
             <li class="information-list__item">
-                <h3>2025年度｜収支決算書</h3>
-                <button class="primary-button"><a href="">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+                <h3>令和6年度収支計算書</h3>
+                <button class="primary-button"><a href="./assets/report/r6_shuushi.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
             </li>
             <li class="information-list__item">
-                <h3>2025年度｜事業報告書</h3>
-                <button class="primary-button"><a href="">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+                <h3>令和6年度事業報告</h3>
+                <button class="primary-button"><a href="./assets/report/r6_zigyouhoukoku.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
             </li>
             <li class="information-list__item">
-                <h3>2025年度｜理事会資料</h3>
-                <button class="primary-button"><a href="">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+                <h3>令和6年度貸借対照表</h3>
+                <button class="primary-button"><a href="./assets/report/r6_chinshakutaishou.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
             </li>
-            
+            <li class="information-list__item">
+                <h3>令和6年度正味財産増減計算書</h3>
+                <button class="primary-button"><a href="./assets/report/r6_shoumizaisan.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+            </li>
+            <li class="information-list__item">
+                <h3>令和7年度予算書</h3>
+                <button class="primary-button"><a href="./assets/report/r7_yosan.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+            </li>
+            <li class="information-list__item">
+                <h3>令和7年度事業計画</h3>
+                <button class="primary-button"><a href="./assets/report/r7_zigyoukeikaku.pdf">ダウンロード<img src="./assets/images/download.svg" alt=""></a></button>
+            </li>
         </ul>
     </section>
 
@@ -258,18 +278,18 @@
                 <li class="access-address__list--detail">
                     <h4>住所</h4>
                     <p>
-                        〒525-0025<br>
-                        滋賀県草津市西渋川二丁目9番38号<br>
-                        渋川福複センター2階
+                        〒525-0034<br>
+                        滋賀県草津市草津一丁目3-5<br>
+                        （本部所在地）
                     </p>
                 </li>
                 <li class="access-address__list--detail">
                     <h4>電話</h4>
-                    <p>077-565-2251</p>
+                    <p>077-569-0351</p>
                 </li>
                 <li class="access-address__list--detail">
                     <h4>メール</h4>
-                    <p>info@kusatsu-renkyou.or.jp</p>
+                    <p>kusatsu-fukushi2@swan.ocn.ne.jp</p>
                 </li>
                 <li class="access-address__list--detail">
                     <h4>開所時間</h4>
@@ -290,7 +310,7 @@
                 </li>
                 <li class="access-method__list--detail">
                     <h4>バス</h4>
-                    <p>近江鉄道バス「市役所前」下車、徒歩3分</p>
+                    <p>草津駅西口8番乗り場　近江鉄道バス「渋川複福センター下車」</p>
                 </li>
                 <li class="access-method__list--detail">
                     <h4>お車</h4>
@@ -313,10 +333,11 @@
         <div class="cta-content">
             <h2>お気軽にご相談ください</h2>
             <p>
-                どんな小さなことでも構いません。まずはお話を聞かせてください。<br>
+                どんな小さなことでも構いません。<br>
+                まずはお話を聞かせてください。<br>
                 一緒に考え、最適な支援をご提案します。
             </p>
-            <button class="primary-button"><a href="./contact.html">お問い合わせ</a></button>
+            <button class="primary-button"><a href="/contact">お問い合わせ</a></button>
         </div>
     </section>
 </main>
@@ -329,9 +350,9 @@
         </div>
         <div class="footer-description__contact">
             <ul>
-                <li><img src="./assets/images/i-place.svg" alt="">〒525-0025<br>滋賀県草津市西渋川二丁目9番38号渋川福複センター2階</li>
-                <li><img src="./assets/images/i-phone.svg" alt="">077-565-2251</li>
-                <li><img src="./assets/images/i-mail.svg" alt="">info@kusatsu-renkyou.or.jp</li>
+                <li><img src="./assets/images/i-place.svg" alt="">〒525-0034<br>滋賀県草津市草津一丁目3-5（本部所在地）</li>
+                <li><img src="./assets/images/i-phone.svg" alt="">077-569-0351</li>
+                <li><img src="./assets/images/i-mail.svg" alt="">kusatsu-fukushi2@swan.ocn.ne.jp</li>
             </ul>
         </div>
     </div>
@@ -341,12 +362,12 @@
             <div class="footer-nav__links">
                 <h2>サイトマップ</h2>
                 <ul>
-                    <li><a href="./index.html">トップ</a></li>
+                    <li><a href="./index.php">トップ</a></li>
                     <li><a href="#">法人について</a></li>
                     <li><a href="./service.html">事業内容</a></li>
-                    <li><a href="./news.html">お知らせ</a></li>
+                    <li><a href="/news">お知らせ</a></li>
                     <li><a href="./recruit.html">採用情報</a></li>
-                    <li><a href="./contact.html">お問い合わせ</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
                 </ul>
             </div>
             <div class="footer-nav__links">
@@ -355,17 +376,8 @@
                     <li><a href="./support/kikan.html">基幹相談支援センター</a></li>
                     <li><a href="./support/hotcoco.html">ほっとココ（計画相談）</a></li>
                     <li><a href="https://locolocoshiga.jp/">ロコロコ</a></li>
-                    <li><a href="">草津市いきいきふれあい大運動会<br>草津市障害者孤立化防止事業</a></li>
-                    <li><a href="">草津市障害福祉センター</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav__links">
-                <h2>情報公開</h2>
-                <ul>
-                    <li><a href="">定款</a></li>
-                    <li><a href="">収支決算書</a></li>
-                    <li><a href="">事業報告書</a></li>
-                    <li><a href="">理事会資料</a></li>
+                    <li><a href="./support/community-support.html">草津市いきいきふれあい大運動会<br>草津市障害者孤立化防止事業</a></li>
+                    <li><a href="./support/welfare-center.html">草津市障害福祉センター</a></li>
                 </ul>
             </div>
         </div>

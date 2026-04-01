@@ -207,6 +207,16 @@
     line-height: 140%;
 }
 
+
+.recruit-jobs__notice { 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: red;
+    font-size: 24px;
+    margin-block: 5rem;
+}
+
 /* 募集職種 (カード形式) */
 .jobs-list {
     max-width: 66.145vw;
@@ -215,6 +225,20 @@
     gap: 2rem;
     margin: 0 auto 12.5rem;
 }
+
+/* ========================
+募集スイッチ 
+=========================*/
+
+/* .jobs-list {
+    display: none;
+} */
+
+.recruit-jobs__notice { 
+    display: none;
+}
+
+/*=========================*/
 
 .jobs-list__card {
     display: block;
