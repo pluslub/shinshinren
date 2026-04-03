@@ -268,7 +268,7 @@ require_once('./news/wp-load.php');
             <section class="section section-5">
                 <div class="section-content">
                     <div class="section-inner orange-bg">
-                        <img class="image" src="./assets/images/service-image-5.jpg" alt="草津市障害福祉センター" />
+                        <img class="image" src="./assets/images/service-image-5.jpg" alt="草津市立障害者福祉センター" />
                         <div class="text-content">
                             <div class="text-header">
                                 <img src="./assets/images/i-building.svg" alt="アイコン">
@@ -278,12 +278,12 @@ require_once('./news/wp-load.php');
                                 </div>
                             </div>
                             <div class="text-body">
-                                草津市から指定管理者として渋川福複センター内2Fで草津市立障害福祉センターを運営しております。
+                                草津市から指定管理者として渋川福複センター内2Fで草津市立障害者福祉センターを運営しております。
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="card-links" href="./support/welfare-center.html"></a>
+                <a class="card-links" href="https://shinshinren.or.jp/"></a>
             </section>
         </div>
     </div>
@@ -419,7 +419,7 @@ require_once('./news/wp-load.php');
                     <li><a href="./support/hotcoco.html">ほっとココ（計画相談）</a></li>
                     <li><a href="https://locolocoshiga.jp/">ロコロコ</a></li>
                     <li><a href="./support/community-support.html">草津市いきいきふれあい大運動会<br>草津市障害者孤立化防止事業</a></li>
-                    <li><a href="./support/welfare-center.html">草津市障害福祉センター</a></li>
+                    <li><a href="https://shinshinren.or.jp/">草津市立障害者福祉センター</a></li>
                 </ul>
             </div>
         </div>
