@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^recruit\.html$ recruit.php [L]

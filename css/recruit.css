@@ -324,7 +324,14 @@
     list-style: disc;
     list-style-position: inside;
 }
-
+.card-body__requirements p {
+    font-family: var(--font-accent);
+    font-size: clamp(0.813rem, 0.706rem + 0.45vw, 1.25rem);
+    color: var(--textColor);
+    margin-bottom: .5rem;
+    list-style: disc;
+    list-style-position: inside;  
+}
 
 @media (max-width: 960px) {
     .recruit-jobs__header h2 {
